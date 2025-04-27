@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { MenuIcon } from "lucide-react";
+import ModeToggle from "../ModeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <>
       <header
@@ -49,6 +51,7 @@ const Navbar = () => {
                 {link.text}
               </NavLink>
             ))}
+            <ModeToggle />
           </nav>
 
           <div className="md:hidden">
@@ -64,7 +67,9 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent className="flex min-md:hidden items-center text-center bg-background/95 backdrop-blur-sm">
                 <SheetHeader>
-                  <SheetTitle>Navigation menu</SheetTitle>
+                  <SheetTitle>
+                    <ModeToggle />
+                  </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
