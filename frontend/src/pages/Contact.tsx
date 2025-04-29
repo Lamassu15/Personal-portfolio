@@ -3,6 +3,10 @@ import { MapPin } from "lucide-react";
 import Map from "../components/sections/Map";
 import SocialLinks from "@/components/SocialLinks";
 import ContactForm from "@/components/ContactForm";
+import AnimateSection from "@/components/AnimateSection";
+import Lottie from "lottie-react";
+import MessageAnimation from "../assets/animations/Message.json";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -10,17 +14,28 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
-          <section>
+          <AnimateSection>
             <SectionTitle
               title="Get In Touch"
               subtitle="Have a project in mind? Let's talk about it."
             />
-          </section>
+          </AnimateSection>
 
-          <div className="grid md:grid-cols-5 gap-12">
-            <section className="md:col-span-2">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <motion.section
+              className="md:col-span-1"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <div className="space-y-8">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   <h3 className="text-xl font-bold mb-4">
                     Contact Information
                   </h3>
@@ -28,9 +43,15 @@ const Contact = () => {
                     Feel free to reach out to me any time. I prefer to talk over
                     email, especially for project inquiries.
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="space-y-4">
+                <motion.div
+                  className="space-y-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
                   <div className="flex items-start gap-4">
                     <MapPin className="text-primary mt-1" />
                     <div>
@@ -38,27 +59,65 @@ const Contact = () => {
                       <p className="text-muted-foreground">Jönköping, Sweden</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
                   <h3 className="text-xl font-bold mb-4">Check me out!</h3>
                   <SocialLinks />
-                </div>
+                </motion.div>
+                <motion.div
+                  className="flex justify-center"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <Lottie
+                    animationData={MessageAnimation}
+                    loop={true}
+                    style={{ width: "75%", height: "100%" }}
+                  />
+                </motion.div>
               </div>
-            </section>
+            </motion.section>
 
-            <section className="md:col-span-3">
+            <motion.section
+              className="md:col-span-1"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <div className="portfolio-card">
-                <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
+                <motion.h3
+                  className="text-xl font-bold mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  Send Me a Message
+                </motion.h3>
                 <ContactForm />
               </div>
-            </section>
+            </motion.section>
           </div>
         </div>
       </section>
 
-      <Map />
-      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <Map />
+      </motion.div>
     </div>
   );
 };

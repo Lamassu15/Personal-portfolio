@@ -3,6 +3,7 @@ import { otherSkills, techStack } from "@/data/skills";
 import { Badge } from "@/components/ui/badge";
 import { CiBoxList } from "react-icons/ci";
 import { motion } from "framer-motion";
+import AnimateSection from "@/components/AnimateSection";
 
 const iconVariants = (duration: number) => ({
   initial: { y: -10 },
@@ -23,12 +24,12 @@ function Skills() {
       {/* Skills Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
-          <section>
+          <AnimateSection>
             <SectionTitle
               title="My Skills"
               subtitle="A comprehensive look at my technical expertise and capabilities"
             />
-          </section>
+          </AnimateSection>
           <section className="flex flex-wrap items-center justify-center gap-4 pb-24">
             {techStack.map((tech, index) => (
               <motion.div
@@ -58,13 +59,17 @@ function Skills() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {otherSkills.map((skill, index) => (
-                  <Badge
+                  <motion.div
                     key={index}
-                    variant="destructive"
-                    className="text-sm py-1 px-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                   >
-                    {skill}
-                  </Badge>
+                    <Badge variant="destructive" className="text-sm py-1 px-3">
+                      {skill}
+                    </Badge>
+                  </motion.div>
                 ))}
               </div>
             </div>

@@ -8,6 +8,7 @@ export const otherSkills = [
   "ExpresJS",
   "UI/UX Design",
   "Agile Methodology",
+  "Scrum",
   "C#",
   "HTML",
   "CSS",
@@ -16,6 +17,10 @@ export const otherSkills = [
   "GitHub Copilot",
   "Cursor",
   "VS Code",
+  "VS Studio",
+  "Framer Motion",
+  "React Hook Form",
+  "Shadcn UI",
 ];
 
 export const techStack = [
