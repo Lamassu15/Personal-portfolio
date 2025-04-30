@@ -65,8 +65,8 @@ const ContactForm = () => {
     setIsLoading(true);
     try {
       const API_URL = import.meta.env.DEV
-        ? "http://localhost:3000/api/send-email"
-        : "https://personal-portfolio-z0ga.onrender.com/api/send-email";
+        ? import.meta.env.VITE_API_URL_DEV
+        : import.meta.env.VITE_API_URL_PROD;
 
       fetch(API_URL, {
         method: "POST",
