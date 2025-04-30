@@ -5,7 +5,7 @@ export const otherSkills = [
   "Vite",
   "ASP.NET",
   "MVC",
-  "ExpresJS",
+  "ExpressJS",
   "UI/UX Design",
   "Agile Methodology",
   "Scrum",

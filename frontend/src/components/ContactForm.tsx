@@ -22,6 +22,8 @@ import {
 } from "@/components/ui/select";
 import { PhoneInput } from "@/components/ui/PhoneInput";
 import { Textarea } from "@/components/ui/textarea";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   Name: z
@@ -47,6 +49,7 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -59,17 +62,55 @@ const ContactForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
     try {
-      console.log(values);
-      toast.success("Form submitted successfully!", {
-        description: "The form was submitted successfully. I will get back to you as soon as possible.",
-      });
-      form.reset();
+      fetch("http://localhost:3000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.Name,
+          email: values.Email,
+          subject: values.Select,
+          message: values.Message,
+          phone: values.Number,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.success) {
+            toast.success("Form submitted successfully!", {
+              description:
+                "The form was submitted successfully. I will get back to you as soon as possible.",
+            });
+            form.reset();
+          } else {
+            throw new Error("Failed to submit form");
+          }
+        })
+        .catch((error) => {
+          console.error("Form submission error", error);
+          toast.error("Failed to submit the form. Please try again.", {
+            description:
+              "The form was not submitted due to an error. Please try again.",
+          });
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     } catch (error) {
       console.error("Form submission error", error);
       toast.error("Failed to submit the form. Please try again.", {
-        description: "The form was not submitted due to an error. Please try again.",
+        description:
+          "The form was not submitted due to an error. Please try again.",
       });
+      setIsLoading(false);
     }
   }
 
@@ -134,6 +175,7 @@ const ContactForm = () => {
                       Web development
                     </SelectItem>
                     <SelectItem value="Web design">Web design</SelectItem>
+                    <SelectItem value="Job offer">Job offer</SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -188,8 +230,14 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button className="w-full" type="submit">
-          Submit
+        <Button
+          type="submit"
+          disabled={isLoading}
+          className={`w-full uppercase font-bold ${
+            isLoading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+        >
+          {isLoading ? <Loader2 className="animate-spin" /> : "Submit"}
         </Button>
       </form>
     </Form>

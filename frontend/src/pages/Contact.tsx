@@ -8,6 +8,8 @@ import Lottie from "lottie-react";
 import MessageAnimation from "../assets/animations/Message.json";
 import { motion } from "framer-motion";
 
+
+
 const Contact = () => {
   return (
     <div className="pt-20">

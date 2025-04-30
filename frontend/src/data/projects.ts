@@ -29,7 +29,7 @@ export const project = [
       "TypeScript",
       "Tailwind CSS",
       "Vite",
-      "ExpressJs",
+      "ExpressJS",
     ],
     github: "https://the-brothers-cut.vercel.app/",
   },
