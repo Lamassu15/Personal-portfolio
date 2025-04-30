@@ -64,7 +64,11 @@ const ContactForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      fetch("http://localhost:3000/api/send-email", {
+      const API_URL = import.meta.env.DEV
+        ? "http://localhost:3000/api/send-email"
+        : "https://personal-portfolio-z0ga.onrender.com/api/send-email";
+
+      fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
