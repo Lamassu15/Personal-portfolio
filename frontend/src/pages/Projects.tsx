@@ -4,6 +4,7 @@ import { project } from "@/data/projects";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import AnimateSection from "@/components/AnimateSection";
+import { Helmet } from "react-helmet-async";
 
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -21,6 +22,13 @@ const Projects = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>My Projects - Keorkes Azdo</title>
+        <meta
+          name="description"
+          content="Explore Keorkes Azdo's portfolio projects showcasing technical expertise in React, TypeScript, and modern web development."
+        />
+      </Helmet>
       {/* Projects Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">

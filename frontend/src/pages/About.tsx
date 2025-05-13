@@ -6,11 +6,19 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import codingAnimation from "../assets/animations/Coding.json";
 import { useRef } from "react";
 import AnimateSection from "@/components/AnimateSection";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const animationRef = useRef<LottieRefCurrentProps>(null);
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>About Me - Keorkes Azdo</title>
+        <meta
+          name="description"
+          content="Learn more about Keorkes Azdo, a passionate Full-Stack Developer with a strong background in web development and programming."
+        />
+      </Helmet>
       {/* About Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">

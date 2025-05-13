@@ -7,12 +7,18 @@ import AnimateSection from "@/components/AnimateSection";
 import Lottie from "lottie-react";
 import MessageAnimation from "../assets/animations/Message.json";
 import { motion } from "framer-motion";
-
-
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Contact Me - Keorkes Azdo</title>
+        <meta
+          name="description"
+          content="Get in touch with Keorkes Azdo for project inquiries, collaborations, or freelance opportunities. Contact via email or social media."
+        />
+      </Helmet>
       {/* Contact Form Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">

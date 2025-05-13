@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { CiBoxList } from "react-icons/ci";
 import { motion } from "framer-motion";
 import AnimateSection from "@/components/AnimateSection";
+import { Helmet } from "react-helmet-async";
 
 const iconVariants = (duration: number) => ({
   initial: { y: -10 },
@@ -21,6 +22,13 @@ const iconVariants = (duration: number) => ({
 function Skills() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>My Skills - Keorkes Azdo</title>
+        <meta
+          name="description"
+          content="Discover Keorkes Azdo's technical skills, including expertise in React, TypeScript, Tailwind CSS, and other modern web development technologies."
+        />
+      </Helmet>
       {/* Skills Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
