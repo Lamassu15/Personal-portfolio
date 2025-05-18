@@ -3,7 +3,7 @@ import SocialLinks from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-const profileImg = "/Keorkes.jpg";
+const profileImg = "/Keorkes.webp";
 import { motion } from "framer-motion";
 import AnimateSection from "@/components/AnimateSection";
 
