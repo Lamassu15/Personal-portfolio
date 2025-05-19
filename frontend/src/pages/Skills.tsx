@@ -57,6 +57,7 @@ function Skills() {
               </motion.div>
             ))}
           </section>
+          <hr className="border-neutral-800 mb-12" />
           <section className="mt-12">
             <div className="portfolio-card">
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">

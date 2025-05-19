@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Mail, List } from "lucide-react";
 import ModeToggle from "../ModeToggle";
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 uppercase">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <ModeToggle />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4 uppercase">
                   {navLinks.map((link) => (
                     <NavLink
                       key={link.href}
@@ -88,10 +88,10 @@ const Navbar = () => {
                 </nav>
                 <div className="flex gap-4">
                   <Button asChild size="sm">
-                    <Link to="/contact">Get in touch</Link>
+                    <Link to="/contact"><Mail />Get in touch</Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/projects">View my work</Link>
+                    <Link to="/projects"><List />View my work</Link>
                   </Button>
                 </div>
               </SheetContent>
