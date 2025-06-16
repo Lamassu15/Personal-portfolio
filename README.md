@@ -1,38 +1,40 @@
-Portfolio Website
-This is my personal portfolio website built with modern web technologies to showcase my projects, skills, and experience as a developer.
+💼 Personal Portfolio
+A modern, fullstack developer portfolio built to showcase my projects, skills, and experience. This site is designed with performance, accessibility, and maintainability in mind, using a powerful tech stack across both frontend and backend.
 
-🛠️ Tech Stack
+📌 Overview
+This portfolio serves as both a personal brand and a technical demonstration of my capabilities. Visitors can view selected projects, read about my skills and experience, and contact me directly via a secure and styled contact form.
+
+🚀 Tech Stack
 Frontend
-Vite – Lightning-fast frontend build tool
+⚡ Vite — Fast build tool and development server
 
-React – Component-based UI library
+⚛️ React — UI library for building component-based interfaces
 
-TypeScript – Strongly typed JavaScript
+🟦 TypeScript — Type-safe JavaScript
 
-Tailwind CSS – Utility-first CSS framework for styling
+🎨 Tailwind CSS — Utility-first CSS framework
 
-shadcn/ui – Accessible and beautifully styled UI components
+🧩 shadcn/ui — Accessible and beautifully designed components
 
 Backend
-Express.js – Minimal and flexible Node.js web application framework
+🛠 Express.js — Backend server for handling API requests
 
-Resend – Email sending service used for handling contact form submissions
+📧 Resend — Email sending service integrated with the contact form
 
-React Email – React components for building email templates
+✉️ React Email — Framework for building email templates with React
 
 Data & Integration
-Supabase – Backend-as-a-Service used to fetch and manage data such as projects and skills
+🗃 Supabase — Used as a database and API service for dynamic project and skills data
 
-📬 Contact Form
-The contact form is powered by Resend and React Email, allowing visitors to send messages directly to my inbox.
+✨ Features
+📱 Responsive design — Works on all screen sizes
 
-🧠 Features
-Responsive design, mobile-friendly
+🔄 Dynamic content — Projects and skills fetched from Supabase
 
-Dynamic content loading from Supabase
+🧩 Component-based architecture — Clean and reusable structure
 
-Accessible UI with shadcn/ui
+📧 Functional contact form — Emails sent securely with Resend + React Email
 
-Type-safe and maintainable codebase with TypeScript
+♿ Accessible UI — Built with accessibility in mind using shadcn/ui
 
-Animated and interactive components
+⚡ Fast & optimized — Thanks to Vite + Tailwind + React
