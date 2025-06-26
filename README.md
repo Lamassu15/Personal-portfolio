@@ -1,40 +1,34 @@
-💼 Personal Portfolio
-A modern, fullstack developer portfolio built to showcase my projects, skills, and experience. This site is designed with performance, accessibility, and maintainability in mind, using a powerful tech stack across both frontend and backend.
+# 💼 Personal Portfolio
 
-📌 Overview
-This portfolio serves as both a personal brand and a technical demonstration of my capabilities. Visitors can view selected projects, read about my skills and experience, and contact me directly via a secure and styled contact form.
+[![Live Demo](https://img.shields.io/badge/Demo-Online-green)](https://din-länk-till-demo.com)
 
-🚀 Tech Stack
-Frontend
-⚡ Vite — Fast build tool and development server
+En modern fullstack-portfolio för att visa mina projekt, färdigheter och erfarenheter.
 
-⚛️ React — UI library for building component-based interfaces
+---
 
-🟦 TypeScript — Type-safe JavaScript
+## ✨ Funktioner
+- 📱 **Responsiv design** – Anpassad för alla skärmstorlekar
+- 🔄 **Dynamiskt innehåll** – Hämtar projekt & skills från Supabase
+- 📧 **Kontaktformulär** – Skickar mail med Resend + React Email
+- ♿ **Tillgänglig UI** – Byggt med shadcn/ui
+- ⚡ **Snabb & optimerad** – Vite, Tailwind och React
 
-🎨 Tailwind CSS — Utility-first CSS framework
+## 🚀 Teknisk stack
+**Frontend**
+- Vite, React, TypeScript, Tailwind CSS, shadcn/ui
 
-🧩 shadcn/ui — Accessible and beautifully designed components
+**Backend**
+- Express.js, Resend, React Email
 
-Backend
-🛠 Express.js — Backend server for handling API requests
+**Data**
+- Supabase
 
-📧 Resend — Email sending service integrated with the contact form
+## 🖼️ Skärmdumpar
+![Screenshot](länk-till-screenshot.png)
 
-✉️ React Email — Framework for building email templates with React
-
-Data & Integration
-🗃 Supabase — Used as a database and API service for dynamic project and skills data
-
-✨ Features
-📱 Responsive design — Works on all screen sizes
-
-🔄 Dynamic content — Projects and skills fetched from Supabase
-
-🧩 Component-based architecture — Clean and reusable structure
-
-📧 Functional contact form — Emails sent securely with Resend + React Email
-
-♿ Accessible UI — Built with accessibility in mind using shadcn/ui
-
-⚡ Fast & optimized — Thanks to Vite + Tailwind + React
+## 📦 Kom igång
+```bash
+git clone https://github.com/Lamassu15/Personal-portfolio.git
+cd Personal-portfolio
+npm install
+npm run dev
