@@ -1,11 +1,12 @@
 import Services from "@/components/sections/Services";
 import SocialLinks from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, Send, List } from "lucide-react";
 import { Link } from "react-router-dom";
-const profileImg = "/Keorkes.jpg";
+const profileImg = "/Keorkes.webp";
 import { motion } from "framer-motion";
 import AnimateSection from "@/components/AnimateSection";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
   // Animation variants for staggered animations
@@ -36,7 +37,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-between  px-4 relative bg-gradient-to-br from-background to-muted">
+      <section className="min-h-screen flex items-center justify-between pt-16 pb-12  px-4 relative bg-gradient-to-br from-background to-muted">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
           <section className="order-2 md:order-1 flex justify-center">
             <motion.div
@@ -57,23 +58,44 @@ const Home = () => {
               >
                 Hi, I'm <span className="text-primary">Keorkes</span> Azdo
               </motion.h1>
+              <div className="mt-2 text-lg text-primary paragraph">
+                <Typewriter
+                  options={{
+                    strings: [
+                      "Full-Stack Developer",
+                      "React & TypeScript",
+                      "Modern Web Solutions",
+                      "Freelancer & Consultant",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 40,
+                  }}
+                />
+              </div>
               <motion.p
                 className="text-muted-foreground paragraph max-w-md"
                 variants={itemVariants}
               >
                 I transform ideas into powerful digital experiences.
-                Specializing in building modern web applications with React and
-                Vite.
+                Specializing in building modern web applications with React &
+                TypeScript with a focus on performance and user experience.
               </motion.p>
               <motion.div
                 className="flex flex-wrap gap-4"
                 variants={itemVariants}
               >
                 <Button asChild size="lg">
-                  <Link to="/contact">Get in touch</Link>
+                  <Link to="/contact">
+                    <Send />
+                    Get in touch
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/projects">View my work</Link>
+                  <Link to="/projects">
+                    <List />
+                    View my work
+                  </Link>
                 </Button>
               </motion.div>
 
@@ -99,14 +121,18 @@ const Home = () => {
                 <img
                   src={profileImg}
                   alt="Developer Profile"
-                  className="w-full h-full object-cover"
+                  className="object-cover rounded-full"
+                  width={400}
+                  height={400}
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             </motion.div>
           </section>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a
             href="#services"
             className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors"

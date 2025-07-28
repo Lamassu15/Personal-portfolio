@@ -9,7 +9,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { MenuIcon } from "lucide-react";
+import { Mail, List } from "lucide-react";
+import { CgMenuRightAlt } from "react-icons/cg";
 import ModeToggle from "../ModeToggle";
 
 const Navbar = () => {
@@ -39,7 +40,7 @@ const Navbar = () => {
           </NavLink>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 uppercase tracking-wider font-medium">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -56,14 +57,14 @@ const Navbar = () => {
 
           <div className="md:hidden">
             <Sheet>
-              <SheetTrigger>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-portfolioLight"
+              <SheetTrigger asChild>
+                <button
+                  type="button"
+                  className="text-portfolioLight p-2 rounded-md focus:outline-none"
+                  aria-label="Open menu"
                 >
-                  <MenuIcon />
-                </Button>
+                  <CgMenuRightAlt className="!w-[32px] !h-[32px]" />
+                </button>
               </SheetTrigger>
               <SheetContent className="flex min-md:hidden items-center text-center bg-background/95 backdrop-blur-sm">
                 <SheetHeader>
@@ -71,7 +72,7 @@ const Navbar = () => {
                     <ModeToggle />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4 uppercase tracking-wider font-medium">
                   {navLinks.map((link) => (
                     <NavLink
                       key={link.href}
@@ -88,10 +89,16 @@ const Navbar = () => {
                 </nav>
                 <div className="flex gap-4">
                   <Button asChild size="sm">
-                    <Link to="/contact">Get in touch</Link>
+                    <Link to="/contact">
+                      <Mail />
+                      Get in touch
+                    </Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/projects">View my work</Link>
+                    <Link to="/projects">
+                      <List />
+                      View my work
+                    </Link>
                   </Button>
                 </div>
               </SheetContent>

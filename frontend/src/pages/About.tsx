@@ -11,6 +11,12 @@ const About = () => {
   const animationRef = useRef<LottieRefCurrentProps>(null);
   return (
     <div className="pt-20">
+      <title>About Me - Keorkes Azdo</title>
+      <meta
+        name="description"
+        content="Learn more about Keorkes Azdo, a passionate Full-Stack Developer with a strong background in web development and programming."
+      />
+
       {/* About Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">

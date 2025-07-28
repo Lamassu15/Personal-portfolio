@@ -12,12 +12,15 @@ import {
 import SectionTitle from "../ui/SectionTitle";
 import AnimateSection from "../AnimateSection";
 import { motion } from "framer-motion";
+import { Gauge, Network } from "lucide-react";
 
 const iconMap: Record<string, JSX.Element> = {
   dev: <RiCodeView />,
   paint: <FaPaintBrush />,
   shield: <FaShieldAlt />,
   shopping: <FaShoppingCart />,
+  cog: <Network />,
+  speed: <Gauge />,
 };
 
 const Services = () => {

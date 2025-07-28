@@ -8,11 +8,15 @@ import Lottie from "lottie-react";
 import MessageAnimation from "../assets/animations/Message.json";
 import { motion } from "framer-motion";
 
-
-
 const Contact = () => {
   return (
     <div className="pt-20">
+      <title>Contact Me - Keorkes Azdo</title>
+      <meta
+        name="description"
+        content="Get in touch with Keorkes Azdo for project inquiries, collaborations, or freelance opportunities. Contact via email or social media."
+      />
+
       {/* Contact Form Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
@@ -41,14 +45,13 @@ const Contact = () => {
                   <h3 className="text-xl font-bold mb-4">
                     Contact Information
                   </h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground">
                     Feel free to reach out to me any time. I prefer to talk over
                     email, especially for project inquiries.
                   </p>
                 </motion.div>
 
                 <motion.div
-                  className="space-y-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
