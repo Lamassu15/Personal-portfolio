@@ -67,8 +67,8 @@ export const techStack = [
     duration: 4,
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/960px-JavaScript-logo.png?20120221235433",
-    alt: "JavaScript",
+    logo: "https://react.email/_next/image?url=%2Fbrand%2Flogo.png&w=128&q=75",
+    alt: "React Email",
     scale: 6,
     duration: 4.5,
   },

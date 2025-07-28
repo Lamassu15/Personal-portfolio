@@ -23,4 +23,16 @@ export const services = [
       "User-friendly designs that enhance engagement. I create wireframes, prototypes (Figma), and polished interfaces to improve usability and conversions.",
     icon: "paint",
   },
+  {
+    service: "API Development",
+    discreption:
+      "Custom APIs to connect your applications and services. I build RESTful APIs that are secure, efficient, and easy to integrate with your existing systems.",
+    icon: "cog",
+  },
+  {
+    service: "Performance Optimization",
+    discreption:
+      "Improve your website's speed and performance. I analyze and optimize your site for faster load times, better user experience, and improved SEO rankings.",
+    icon: "speed",
+  },
 ];
