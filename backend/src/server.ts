@@ -23,7 +23,7 @@ app.post("/api/send-email", async (req, res) => {
 
     // Send main email to you
     const mainEmail = await resend.emails.send({
-      from: "Portfolio Contact <info@gabara.se>",
+      from: "Portfolio Contact <send.azdodev.com>",
       to: ["bazo.assyr@gmail.com"], // Replace with your email
       subject: `New Contact Form Message: ${subject}`,
       replyTo: email,
@@ -38,7 +38,7 @@ app.post("/api/send-email", async (req, res) => {
 
     // Send auto-reply to the sender
     const autoReply = await resend.emails.send({
-      from: "Keorkes Azdo <info@gabara.se>",
+      from: "Keorkes Azdo <send.azdodev.com>",
       to: [email],
       subject: "Thank you for your message!",
       react: AutoReplyEmail({

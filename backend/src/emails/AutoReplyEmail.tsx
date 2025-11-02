@@ -36,7 +36,7 @@ const AutoReplyEmail = ({ name }: AutoReplyEmailProps) => {
             </Text>
             <Text style={text}>
               In the meantime, feel free to check out my{" "}
-              <Link href="https://gabara.se" style={link}>
+              <Link href="https://azdodev.com" style={link}>
                 portfolio
               </Link>{" "}
               or connect with me on{" "}

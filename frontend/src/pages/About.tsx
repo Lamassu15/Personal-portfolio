@@ -6,6 +6,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import codingAnimation from "../assets/animations/Coding.json";
 import { useRef } from "react";
 import AnimateSection from "@/components/AnimateSection";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   const animationRef = useRef<LottieRefCurrentProps>(null);
@@ -60,7 +61,7 @@ const About = () => {
                   that don't just work, but add real value.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-2 mb-8">
                   <div className="flex items-center gap-2">
                     <MapPin className="text-primary" size={18} />
                     <span>Jönköping, Sweden</span>
@@ -139,6 +140,15 @@ const About = () => {
                           <Calendar size={16} />
                           {edu.period}
                         </span>
+                        <NavLink
+                          to={edu.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p className="text-sm text-accent underline mt-1">
+                            View Certificate
+                          </p>
+                        </NavLink>
                       </div>
                     </div>
                     <p className="text-muted-foreground">{edu.description}</p>

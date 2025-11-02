@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight, Send, List } from "lucide-react";
 import { Link } from "react-router-dom";
 const profileImg = "/Keorkes.webp";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import AnimateSection from "@/components/AnimateSection";
 import Typewriter from "typewriter-effect";
 
@@ -21,7 +21,7 @@ const Home = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
@@ -37,9 +37,11 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-between pt-16 pb-12  px-4 relative bg-gradient-to-br from-background to-muted">
-        <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <section className="order-2 md:order-1 flex justify-center">
+      <section className="min-h-[75vh] flex items-center px-4 relative bg-gradient-to-br from-background to-muted">
+        {/* Consolidated Container: Relies on outer flex/items-center for vertical positioning */}
+        <div className="container mx-auto grid md:grid-cols-2 gap-12 py-20 items-center">
+          {/* Text Content Column (Left on Desktop, Second on Mobile) */}
+          <div className="order-2 md:order-1 flex justify-center">
             <motion.div
               className="space-y-6"
               variants={containerVariants}
@@ -64,7 +66,7 @@ const Home = () => {
                     strings: [
                       "Full-Stack Developer",
                       "React & TypeScript",
-                      "Modern Web Solutions",
+                      "ASP.NET Core",
                       "Freelancer & Consultant",
                     ],
                     autoStart: true,
@@ -78,8 +80,9 @@ const Home = () => {
                 variants={itemVariants}
               >
                 I transform ideas into powerful digital experiences.
-                Specializing in building modern web applications with React &
-                TypeScript with a focus on performance and user experience.
+                Specializing in building modern web applications with React,
+                TypeScript & ASP.NET Core with a focus on performance and user
+                experience.
               </motion.p>
               <motion.div
                 className="flex flex-wrap gap-4"
@@ -103,11 +106,12 @@ const Home = () => {
                 <SocialLinks />
               </motion.div>
             </motion.div>
-          </section>
+          </div>
 
-          <section className="order-1 md:order-2 flex justify-center">
+          {/* Image Column (Right on Desktop, First on Mobile) */}
+          <div className="order-1 md:order-2 flex justify-center">
             <motion.div
-              className="w-full max-w-md aspect-square bg-primary/10 rounded-full flex items-center justify-center"
+              className="w-full max-w-sm aspect-square bg-primary/10 rounded-full flex items-center justify-center"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -124,15 +128,16 @@ const Home = () => {
                   className="object-cover rounded-full"
                   width={400}
                   height={400}
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
               </div>
             </motion.div>
-          </section>
+          </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a
             href="#services"
             className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors"
@@ -142,6 +147,7 @@ const Home = () => {
           </a>
         </div>
       </section>
+
       {/* Services Section */}
       <Services />
 

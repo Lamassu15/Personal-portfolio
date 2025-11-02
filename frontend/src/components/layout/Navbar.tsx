@@ -4,6 +4,7 @@ import { navLinks } from "../../data/links";
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -40,7 +41,7 @@ const Navbar = () => {
           </NavLink>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-6 uppercase tracking-wider font-medium">
+          <nav className="hidden md:flex items-center space-x-6 uppercase tracking-wide">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -55,12 +56,13 @@ const Navbar = () => {
             <ModeToggle />
           </nav>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ModeToggle />
             <Sheet>
               <SheetTrigger asChild>
                 <button
                   type="button"
-                  className="text-portfolioLight p-2 rounded-md focus:outline-none"
+                  className="text-portfolioLight rounded-md focus:outline-none"
                   aria-label="Open menu"
                 >
                   <CgMenuRightAlt className="!w-[32px] !h-[32px]" />
@@ -68,11 +70,9 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent className="flex min-md:hidden items-center text-center bg-background/95 backdrop-blur-sm">
                 <SheetHeader>
-                  <SheetTitle>
-                    <ModeToggle />
-                  </SheetTitle>
+                  <SheetTitle></SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-4 uppercase tracking-wider font-medium">
+                <nav className="flex flex-col gap-4 uppercase tracking-wider font-medium items-center">
                   {navLinks.map((link) => (
                     <NavLink
                       key={link.href}
@@ -87,7 +87,7 @@ const Navbar = () => {
                     </NavLink>
                   ))}
                 </nav>
-                <div className="flex gap-4">
+                <SheetFooter className="flex flex-row">
                   <Button asChild size="sm">
                     <Link to="/contact">
                       <Mail />
@@ -100,7 +100,7 @@ const Navbar = () => {
                       View my work
                     </Link>
                   </Button>
-                </div>
+                </SheetFooter>
               </SheetContent>
             </Sheet>
           </div>

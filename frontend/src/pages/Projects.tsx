@@ -3,14 +3,16 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import AnimateSection from "@/components/AnimateSection";
 import { supabase } from "@/lib/supabaseClient";
 import { useQuery } from "@tanstack/react-query";
-import { Loader } from "lucide-react";
+import { AlertCircleIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { Spinner } from "@/components/ui/spinner";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const fetchProjects = async () => {
   const { data, error } = await supabase
     .from("Projects")
     .select("*")
-    .order("id", { ascending: true });
+    .order("created_at", { ascending: false });
   if (error) throw new Error(error.message);
   return data;
 };
@@ -30,7 +32,7 @@ const Projects = () => {
       <title>My Projects - Keorkes Azdo</title>
       <meta
         name="description"
-        content="Explore Keorkes Azdo's portfolio projects showcasing technical expertise in React, TypeScript, and modern web development."
+        content="Explore Keorkes Azdo's portfolio projects showcasing technical expertise in React, TypeScript, ASP.NER Core and modern web development."
       />
       {/* Projects Section */}
       <section className="section-padding bg-background">
@@ -45,13 +47,23 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {isLoading ? (
               <div className="col-span-full flex justify-center items-center">
-                <Loader className="animate-spin w-10 h-10 text-primary" />
+                <Spinner className="size-8 text-accent" />
               </div>
             ) : error ? (
               <div className="col-span-full flex justify-center items-center">
-                <p className="text-destructive">
-                  Error loading projects: {error.message}
-                </p>
+                <Alert variant="destructive">
+                  <AlertCircleIcon />
+                  <AlertTitle>Unable to load projects.</AlertTitle>
+                  <AlertDescription>
+                    <p>
+                      Check your internet connection or if there is an API
+                      error.
+                    </p>
+                    <ul className="list-inside list-disc text-sm">
+                      <li>Error loading projects: {error.message}</li>
+                    </ul>
+                  </AlertDescription>
+                </Alert>
               </div>
             ) : projects.length > 0 ? (
               projects.map((proj, index) => (
@@ -68,6 +80,7 @@ const Projects = () => {
                     image={proj.imageUrl}
                     tags={proj.tags}
                     github={proj.github}
+                    liveDemo={proj.liveDemo}
                   />
                 </motion.div>
               ))
