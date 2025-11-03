@@ -2,21 +2,20 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import { techStack } from "@/data/skills";
 import { Badge } from "@/components/ui/badge";
 import { CiBoxList } from "react-icons/ci";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import AnimateSection from "@/components/AnimateSection";
 import { supabase } from "@/lib/supabaseClient";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "lucide-react";
 
-const iconVariants = (duration: number) => ({
-  initial: { y: -10 },
+const iconVariants = (duration: number): Variants => ({
+  initial: { opacity: 0, scale: 0.8 },
   animate: {
-    y: [10, -10],
+    opacity: 1,
+    scale: 1,
     transition: {
       duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse" as const,
+      ease: "easeOut",
     },
   },
 });

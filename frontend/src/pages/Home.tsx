@@ -111,7 +111,7 @@ const Home = () => {
           {/* Image Column (Right on Desktop, First on Mobile) */}
           <div className="order-1 md:order-2 flex justify-center">
             <motion.div
-              className="w-full max-w-sm aspect-square bg-primary/10 rounded-full flex items-center justify-center"
+              className="w-full max-w-xs aspect-square bg-primary/10 rounded-full flex items-center justify-center"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -121,7 +121,7 @@ const Home = () => {
                 delay: 0.5,
               }}
             >
-              <div className="w-5/6 h-5/6 bg-gradient-to-br from-primary to-accent/70 rounded-full overflow-hidden">
+              <div className="w-5/6 h-5/6 bg-linner-to-br from-primary to-accent/70 rounded-full overflow-hidden">
                 <img
                   src={profileImg}
                   alt="Developer Profile"
