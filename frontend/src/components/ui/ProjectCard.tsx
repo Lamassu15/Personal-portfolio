@@ -22,12 +22,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveDemo,
 }) => {
   return (
-    <div className="portfolio-card group overflow-hidden">
+    <div className="portfolio-card group overflow-hidden w-full">
       <div className="relative overflow-hidden rounded-md mb-4">
         <img
           src={image}
           alt={title}
-          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-125"
         />
         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
           <div className="flex gap-3">
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <ScrollArea className="h-18 mb-4">
+      <ScrollArea className="h-20 mb-4">
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
         <ScrollBar orientation="vertical" />
       </ScrollArea>

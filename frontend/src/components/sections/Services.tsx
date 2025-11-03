@@ -11,7 +11,7 @@ import {
 } from "../ui/card";
 import SectionTitle from "../ui/SectionTitle";
 import AnimateSection from "../AnimateSection";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Gauge, Network } from "lucide-react";
 
 const iconMap: Record<string, JSX.Element> = {
@@ -36,7 +36,7 @@ const Services = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants : Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
