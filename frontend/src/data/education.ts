@@ -1,6 +1,6 @@
 export const education = [
   {
-    degree: "Web Developer",
+    degree: "Full-Stack Web Developer",
     school: "TUC SWEDEN.",
     certificate:
       "https://true.tucsweden.se/examensbevis-pyczg-keorkes-awadis-azdo-262261-5802/?lang=se/",

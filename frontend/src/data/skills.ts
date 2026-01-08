@@ -23,53 +23,126 @@ export const otherSkills = [
   "Shadcn UI",
 ];
 
-export const techStack = [
+export interface Skill {
+  logo: string;
+  alt: string;
+  title: string; // Nytt: Huvudtitel för kortet (t.ex. "React")
+  description: string; // Nytt: Kort beskrivning av färdigheten
+  percentage: number; // Nytt: Procent (0-100) för Progress-komponenten
+  duration: number; // Behålls för Framer Motion
+}
+
+export const techStack: Skill[] = [
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/400px-Figma-logo.svg.png",
     alt: "Figma",
-    scale: 2.5,
+    title: "Figma Design",
+    description: "Design tool.",
+    percentage: 70,
     duration: 1,
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png",
     alt: "TypeScript",
-    scale: 3,
+    title: "TypeScript",
+    description: "programming language.",
+    percentage: 95,
+    duration: 1.5,
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1163px-Postgresql_elephant.svg.png",
+    alt: "PostgresSQL",
+    title: "PostgresSQL",
+    description: "Database system.",
+    percentage: 90,
+    duration: 1.5,
+  },
+  {
+    logo: "https://img.icons8.com/color/512/supabase.png",
+    alt: "Supabase",
+    title: "Supabase",
+    description: "Open-source backend platform",
+    percentage: 85,
     duration: 1.5,
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
     alt: "React",
-    scale: 3.5,
+    title: "React",
+    description: "Javascript library.",
+    percentage: 85,
     duration: 2,
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png",
-    alt: "Bootstrap",
-    scale: 4,
+    logo: "https://cdn.brandfetch.io/id0BqaqET6/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1748366671512",
+    alt: "Resend",
+    title: "Resend",
+    description: "Email for developers.",
+    percentage: 75,
     duration: 2.5,
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
     alt: "Tailwind",
-    scale: 4.5,
+    title: "Tailwind CSS",
+    description: "css framework.",
+    percentage: 90,
     duration: 3,
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg",
     alt: "DotNet",
-    scale: 5,
+    title: "ASP.NET Core",
+    description: "open-source framework.",
+    percentage: 70,
     duration: 3.5,
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/512px-WordPress_blue_logo.svg.png",
     alt: "WordPress",
-    scale: 5.5,
+    title: "WordPress",
+    description: "Website building platform.",
+    percentage: 60,
     duration: 4,
   },
   {
     logo: "https://react.email/_next/image?url=%2Fbrand%2Flogo.png&w=128&q=75",
     alt: "React Email",
-    scale: 6,
+    title: "React Email",
+    description: "responsive email templates.",
+    percentage: 85,
+    duration: 4.5,
+  },
+  {
+    logo: "https://custom.typingmind.com/assets/models/cursor.png",
+    alt: "Cursor",
+    title: "Cursor",
+    description: "ai code editor.",
+    percentage: 85,
+    duration: 4.5,
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
+    alt: "Vite",
+    title: "Vite",
+    description: "build tool.",
+    percentage: 85,
+    duration: 4.5,
+  },
+  {
+    logo: "https://images.seeklogo.com/logo-png/51/2/shadcn-ui-logo-png_seeklogo-519786.png",
+    alt: "Shadcn/ui",
+    title: "Shadcn/ui",
+    description: "component library.",
+    percentage: 85,
+    duration: 4.5,
+  },
+  {
+    logo: "https://www.svgrepo.com/show/327408/logo-vercel.svg",
+    alt: "Vercel",
+    title: "Vercel",
+    description: "hosting platform.",
+    percentage: 85,
     duration: 4.5,
   },
 ];

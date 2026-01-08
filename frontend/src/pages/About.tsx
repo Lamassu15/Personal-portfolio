@@ -61,7 +61,7 @@ const About = () => {
                   that don't just work, but add real value.
                 </p>
 
-                <div className="grid grid-cols-2 gap-2 mb-8">
+                <div className="grid sm:grid-cols-2 gap-2 mb-8">
                   <div className="flex items-center gap-2">
                     <MapPin className="text-primary" size={18} />
                     <span>Jönköping, Sweden</span>

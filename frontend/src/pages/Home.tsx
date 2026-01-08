@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="min-h-[75vh] flex items-center px-4 relative bg-gradient-to-br from-background to-muted">
+      <section className="min-h-[75vh] flex items-center px-4 relative bg-linear-to-br from-background to-muted">
         {/* Consolidated Container: Relies on outer flex/items-center for vertical positioning */}
         <div className="container mx-auto grid md:grid-cols-2 gap-12 py-20 items-center">
           {/* Text Content Column (Left on Desktop, Second on Mobile) */}

@@ -6,7 +6,7 @@ export const services = [
     icon: "dev",
   },
   {
-    service: "WordPress Development",
+    service: "WordPress",
     discreption:
       "Get a professional WordPress website with custom themes, plugins, and seamless functionality. From blogs to business sites, I ensure your site is easy to manage, SEO-friendly, and optimized for speed.",
     icon: "shield",
@@ -24,7 +24,7 @@ export const services = [
     icon: "paint",
   },
   {
-    service: "API Development",
+    service: "API Integration",
     discreption:
       "Custom APIs to connect your applications and services. I build RESTful APIs that are secure, efficient, and easy to integrate with your existing systems.",
     icon: "cog",

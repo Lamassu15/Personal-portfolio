@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    title: "Web Developer (Practice)",
+    title: "Frontend Developer",
     company: "JOART.",
     period: "2024 Nov - 2025 Apr",
     description:
